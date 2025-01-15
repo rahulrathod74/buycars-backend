@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json()); // Using express's built-in JSON parser
 
 // MongoDB Connection
-mongoose.connect("mongodb://localhost:27017/buycars")
+mongoose.connect(process.env.MONGODB)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log("Error connecting to MongoDB: ", err));
 

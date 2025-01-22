@@ -7,7 +7,8 @@ require("dotenv").config();
 
 const app = express();
 const allowedOrigins = ["http://localhost:5000", "https://buycars-6lbf.onrender.com", "http://localhost:5173", "https://dreamy-douhua-a8abb5.netlify.app/"];
-app.use(cors({ origin: allowedOrigins }));
+app.use(cors({ origin: allowedOrigins,methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'], }));
 app.use(express.json()); // Use JSON parser
 
 // MongoDB Connection
